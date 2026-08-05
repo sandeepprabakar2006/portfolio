@@ -459,12 +459,10 @@ renderProjects();
 function renderCerts() {
   const grid = $('#certsGrid');
   grid.innerHTML = '';
-  const certIcons = ['🏆','🎓','☁️','🔒','⚙️','🌐','🛡️','📜'];
-  state.certs.forEach((c, i) => {
+  state.certs.forEach((c) => {
     const card = document.createElement('div');
     card.className = 'cert-card reveal';
     card.innerHTML = `
-      <div class="cert-badge">${certIcons[i % certIcons.length]}</div>
       ${c.fileDataUrl && c.filename && !c.filename.endsWith('.pdf')
         ? `<a href="${esc(c.url || c.fileDataUrl)}" target="_blank"><img src="${c.fileDataUrl}" alt="${esc(c.title)}" class="cert-preview-thumb" /></a>`
         : (c.fileDataUrl && c.filename && c.filename.endsWith('.pdf')
@@ -472,11 +470,6 @@ function renderCerts() {
       <div class="cert-title">${esc(c.title)}</div>
       <div class="cert-issuer">${esc(c.issuer)}</div>
       <div class="cert-date">${formatDate(c.date)}</div>
-      <div class="cert-actions">
-        ${c.url ? `<a href="${esc(c.url)}" target="_blank" class="btn btn-sm btn-outline">View</a>` : ''}
-        ${c.fileDataUrl ? `<a href="${c.fileDataUrl}" download="${esc(c.filename || 'certificate')}" class="btn btn-sm btn-outline">Download</a>` : '' }
-        
-      </div>
     `;
     grid.appendChild(card);
   });
