@@ -483,6 +483,7 @@ renderCerts();
 // ═══════════════════════════════════════════════
 function renderTimeline() {
   const container = $('#timeline');
+  if (!container) return;
   container.innerHTML = '';
   [...state.milestones].sort((a, b) => b.date.localeCompare(a.date)).forEach(m => {
     const item = document.createElement('div');
@@ -494,32 +495,33 @@ function renderTimeline() {
         <span class="timeline-type">${catEmoji(m.type)} ${m.type}</span>
         <div class="timeline-title">${esc(m.title)}</div>
         <div class="timeline-desc">${esc(m.desc)}</div>
-
       </div>
     `;
     container.appendChild(item);
   });
 }
 
-
 renderTimeline();
 
 // ═══════════════════════════════════════════════
 //  CONTACT FORM
 // ═══════════════════════════════════════════════
-$('#contactForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const btn = $('#contactSubmit');
-  btn.disabled = true; btn.textContent = 'Sending…';
-  setTimeout(() => {
-    btn.disabled = false;
-    btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send Message`;
-    $('#formNote').textContent = '✓ Message sent! I\'ll get back to you soon.';
-    this.reset();
-    setTimeout(() => { $('#formNote').textContent = ''; }, 4000);
-    showToast('Message sent! ✉️');
-  }, 1200);
-});
+const contactForm = $('#contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = $('#contactSubmit');
+    btn.disabled = true; btn.textContent = 'Sending…';
+    setTimeout(() => {
+      btn.disabled = false;
+      btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send Message`;
+      $('#formNote').textContent = '✓ Message sent! I\'ll get back to you soon.';
+      this.reset();
+      setTimeout(() => { $('#formNote').textContent = ''; }, 4000);
+      showToast('Message sent! ✉️');
+    }, 1200);
+  });
+}
 
 // ═══════════════════════════════════════════════
 //  UTIL — escape HTML
