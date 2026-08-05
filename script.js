@@ -37,10 +37,9 @@ const state = {
   certs: [
     { id: 1, title: 'Network Defense Essentials (NDE)', issuer: 'EC-Council', date: '2026-07', url: 'NDE.jpg', fileDataUrl: 'NDE.jpg', filename: 'NDE.jpg' },
     { id: 2, title: 'Cloud Security Fundamentals', issuer: 'Palo Alto Networks', date: '2026-07', url: 'palo_alto.jpg', fileDataUrl: 'palo_alto.jpg', filename: 'palo_alto.jpg' },
-    { id: 3, title: 'Microsoft Azure', issuer: 'Udemy', date: '2026-01', url: '', fileDataUrl: null, filename: '' },
-    { id: 4, title: 'Python Programming Masterclass', issuer: 'Udemy', date: '2025-01', url: '', fileDataUrl: null, filename: '' },
-    { id: 5, title: 'Mastering Data Structures and Algorithm using C & C++', issuer: 'Udemy', date: '2025-01', url: '', fileDataUrl: null, filename: '' },
-    { id: 6, title: 'Cloud Fundamentals', issuer: 'AWS Academy', date: '2024-01', url: '', fileDataUrl: null, filename: '' },
+    { id: 3, title: 'AWS Academy Graduate - Cloud Foundations', issuer: 'AWS Academy', date: '2026-05', url: 'aws.jpg', fileDataUrl: 'aws.jpg', filename: 'aws.jpg' },
+    { id: 4, title: 'Microsoft Azure', issuer: 'Udemy', date: '2026-04', url: 'azure.jpg', fileDataUrl: 'azure.jpg', filename: 'azure.jpg' },
+    { id: 5, title: 'Reverse Engineering Malware Workshop', issuer: 'Amrita Vishwa Vidyapeetham', date: '2026-01', url: 'RE.jpg', fileDataUrl: 'RE.jpg', filename: 'RE.jpg' },
   ],
   milestones: [
     { id: 1, title: 'Cybersecurity Intern – Infoziant', desc: 'Developed a Capture The Flag (CTF) platform. Gained hands-on experience in cloud and on-premise environments focusing on securing systems and network monitoring.', date: '2025-05', type: 'internship' },
