@@ -35,10 +35,12 @@ const state = {
     }
   ],
   certs: [
-    { id: 1, title: 'Microsoft Azure', issuer: 'Udemy', date: '2026-01', url: '', fileDataUrl: null, filename: '' },
-    { id: 2, title: 'Python Programming Masterclass', issuer: 'Udemy', date: '2025-01', url: '', fileDataUrl: null, filename: '' },
-    { id: 3, title: 'Mastering Data Structures and Algorithm using C & C++', issuer: 'Udemy', date: '2025-01', url: '', fileDataUrl: null, filename: '' },
-    { id: 4, title: 'Cloud Fundamentals', issuer: 'AWS Academy', date: '2024-01', url: '', fileDataUrl: null, filename: '' },
+    { id: 1, title: 'Network Defense Essentials (NDE)', issuer: 'EC-Council', date: '2026-07', url: 'NDE.jpg', fileDataUrl: 'NDE.jpg', filename: 'NDE.jpg' },
+    { id: 2, title: 'Cloud Security Fundamentals', issuer: 'Palo Alto Networks', date: '2026-07', url: 'palo_alto.jpg', fileDataUrl: 'palo_alto.jpg', filename: 'palo_alto.jpg' },
+    { id: 3, title: 'Microsoft Azure', issuer: 'Udemy', date: '2026-01', url: '', fileDataUrl: null, filename: '' },
+    { id: 4, title: 'Python Programming Masterclass', issuer: 'Udemy', date: '2025-01', url: '', fileDataUrl: null, filename: '' },
+    { id: 5, title: 'Mastering Data Structures and Algorithm using C & C++', issuer: 'Udemy', date: '2025-01', url: '', fileDataUrl: null, filename: '' },
+    { id: 6, title: 'Cloud Fundamentals', issuer: 'AWS Academy', date: '2024-01', url: '', fileDataUrl: null, filename: '' },
   ],
   milestones: [
     { id: 1, title: 'Cybersecurity Intern – Infoziant', desc: 'Developed a Capture The Flag (CTF) platform. Gained hands-on experience in cloud and on-premise environments focusing on securing systems and network monitoring.', date: '2025-05', type: 'internship' },
@@ -465,7 +467,7 @@ function renderCerts() {
     card.innerHTML = `
       <div class="cert-badge">${certIcons[i % certIcons.length]}</div>
       ${c.fileDataUrl && c.filename && !c.filename.endsWith('.pdf')
-        ? `<img src="${c.fileDataUrl}" alt="Certificate" class="cert-preview-thumb" />`
+        ? `<a href="${esc(c.url || c.fileDataUrl)}" target="_blank"><img src="${c.fileDataUrl}" alt="${esc(c.title)}" class="cert-preview-thumb" /></a>`
         : (c.fileDataUrl && c.filename && c.filename.endsWith('.pdf')
           ? `<div style="background:rgba(99,179,237,0.08);border:1px solid var(--c-border);border-radius:8px;padding:10px 14px;margin-bottom:14px;font-size:0.8rem;color:var(--c-primary)">📄 PDF: ${esc(c.filename)}</div>` : '')}
       <div class="cert-title">${esc(c.title)}</div>
