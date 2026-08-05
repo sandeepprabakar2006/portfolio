@@ -8,6 +8,15 @@ const state = {
   projects: [
     {
       id: 1,
+      title: 'AgentVerse – AI-Powered Predictive Maintenance Platform',
+      description: 'An AI-powered predictive maintenance platform featuring a Digital Twin, 10 autonomous AI agents, real-time sensor simulation, and an Industry 4.0 control-room dashboard.',
+      tech: ['Python', 'AI Agents', 'Digital Twin', 'IoT Simulation'],
+      github: 'https://github.com/Sreejesh06/AgentVerse',
+      demo: '',
+      cat: 'cloud',
+    },
+    {
+      id: 2,
       title: 'NetDictator – Cybersecurity Monitoring & Control System',
       description: 'Monitors network activity and detect sensitive data exposure using real-time traffic analysis. Applies automated protection actions such as encryption and data masking to secure critical information.',
       tech: ['Python', 'Flask', 'Monitoring', 'Encryption'],
@@ -16,7 +25,7 @@ const state = {
       cat: 'security',
     },
     {
-      id: 2,
+      id: 3,
       title: 'DoS Detection – Network Security System',
       description: 'Identifies denial-of-service attacks by analyzing abnormal traffic spikes and connection patterns. Implements threshold-based detection with real-time alerts and logging for attack mitigation.',
       tech: ['Python', 'Sockets', 'Traffic Analysis', 'Logging'],
@@ -25,7 +34,7 @@ const state = {
       cat: 'security',
     },
     {
-      id: 3,
+      id: 4,
       title: 'OmniSec – Multi-Cloud Security Monitoring System',
       description: 'Monitors multi-cloud environments to detect misconfigurations, unauthorized access, and threats. Provides centralized dashboard with alerts, risk assessment, and security recommendations.',
       tech: ['Python', 'Cloud APIs', 'Monitoring'],
