@@ -38,9 +38,18 @@ const state = {
       title: 'OmniSec – Multi-Cloud Security Monitoring System',
       description: 'Monitors multi-cloud environments to detect misconfigurations, unauthorized access, and threats. Provides centralized dashboard with alerts, risk assessment, and security recommendations.',
       tech: ['Python', 'Cloud APIs', 'Monitoring'],
-      github: 'https://github.com/sandeepprabakar2006',
+      github: 'https://github.com/sandeepprabakar2006/CSPM',
       demo: '',
       cat: 'cloud',
+    },
+    {
+      id: 5,
+      title: 'Reconance – Web Reconnaissance & OSINT Security Dashboard',
+      description: 'A FastAPI backend & HTML dashboard for authorized recon: Nmap scanning, WHOIS, DNS & subdomain enumeration, GeoIP, web fingerprinting, and Anthropic AI chat assistant for result analysis.',
+      tech: ['FastAPI', 'Python', 'Nmap', 'Anthropic API', 'OSINT'],
+      github: 'https://github.com/sandeepprabakar2006/Reconance',
+      demo: '',
+      cat: 'security',
     }
   ],
   certs: [
